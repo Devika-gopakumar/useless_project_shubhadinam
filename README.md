@@ -14,13 +14,13 @@
 - Member 3: Adithya Prakash - [College of Engineering,Trivandrum]
 
 ### Project Description
-[]
+Having a bad day,cheer your self up(or not) using our website Shubha Dinam
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+Countless engineering students continues to endure emotional turmoil on a daily basis due to their hectic schedule.We have found a solution to make their bad day even worse.
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+The endless motivation that our website provides fuels your energy and keeps your spirits up to keep you demotivated for the rest of your life
 
 ## Technical Details
 ### Technologies/Components Used
@@ -52,9 +52,7 @@ For Software:
 ![Screenshot3](Add screenshot 3 here with proper name)
 *Add caption explaining what this shows*
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+
 
 
 ### Project Demo
@@ -65,9 +63,9 @@ For Software:
 
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+devika html
+adithya css
+angelina javascript
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 

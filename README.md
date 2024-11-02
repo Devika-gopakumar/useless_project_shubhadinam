@@ -44,7 +44,6 @@ For Software:
 
 # Screenshots (Add at least 3)
 ![Screenshot 2024-11-02 173132](https://github.com/user-attachments/assets/7eeea56a-dd7c-46c0-bd49-cd700517b56c)
-![Screenshot 2024-11-02 173132](https://github.com/user-attachments/assets/0abaeea3-9c41-4f0d-bebb-1b597668f6f8)
 
 ![Screenshot 2024-11-02 173102](https://github.com/user-attachments/assets/e37a7c20-5d5b-4eb1-a749-b447c3307ad2)
 

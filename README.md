@@ -43,22 +43,19 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot 2024-11-02 173132](https://github.com/user-attachments/assets/7eeea56a-dd7c-46c0-bd49-cd700517b56c)
+![Screenshot 2024-11-02 173132](https://github.com/user-attachments/assets/0abaeea3-9c41-4f0d-bebb-1b597668f6f8)
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot 2024-11-02 173102](https://github.com/user-attachments/assets/e37a7c20-5d5b-4eb1-a749-b447c3307ad2)
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Uploading Screenshot 2024-11-02 173939.png…]()
+
 
 
 
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
 
 
 

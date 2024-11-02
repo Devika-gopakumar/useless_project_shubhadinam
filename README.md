@@ -9,8 +9,8 @@
 
 
 ### Team Members
-- Team Lead: Angelina Raj - [College of Engineering ,Trivandrum]
-- Member 2: Devika G - [College of Engineering,Trivandrum]
+- Team Lead: Devika G- [College of Engineering ,Trivandrum]
+- Member 2: Angelina Raj - [College of Engineering,Trivandrum]
 - Member 3: Adithya Prakash - [College of Engineering,Trivandrum]
 
 ### Project Description

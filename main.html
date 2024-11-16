@@ -16,37 +16,6 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            cursor: none;
-        }
-
-        /* Custom Cursor */
-        .cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #ff4081;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.2s;
-        }
-
-        .cursor-dot {
-            width: 4px;
-            height: 4px;
-            background: #ff4081;
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-        }
-
-        /* Interactive Background */
-        .particle {
-            position: absolute;
-            background: radial-gradient(circle, #ff4081 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
         }
 
         /* Page Styling */
@@ -56,7 +25,6 @@
             flex-direction: column;
             align-items: center;
             position: relative;
-            z-index: 1;
         }
 
         h1 {
@@ -87,6 +55,7 @@
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 64, 129, 0.5);
         }
 
         button::before {
@@ -113,129 +82,43 @@
             display: none;
         }
 
-        /* Floating Elements */
-        .floating-emoji {
-            position: absolute;
-            font-size: 2em;
-            pointer-events: none;
-            animation: float 3s ease-in-out infinite;
-            opacity: 0.7;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-        }
-
-        /* Keep existing video sticker styles */
+        /* Video Styles */
         #videoSticker {
-    position: fixed;
-    width: 500px; /* Increased from 300px to 500px */
-    height: 280px; /* Added height to maintain the aspect ratio */
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
-}
-
+            position: fixed;
+            width: 500px;
+            height: 280px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
 
         #videoSticker iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
-
-        @keyframes moveAround {
-            0% { top: 10%; left: 10%; }
-            25% { top: 30%; left: 70%; }
-            50% { top: 70%; left: 30%; }
-            75% { top: 50%; left: 80%; }
-            100% { top: 10%; left: 10%; }
-        }
-
-        .moving {
-            animation: moveAround 10s ease-in-out infinite;
-        }
     </style>
 </head>
 <body>
-    <div class="cursor"></div>
-    <div class="cursor-dot"></div>
-
-    <!-- First Page -->
+    <!-- Initial Page -->
     <div id="page1" class="page">
-        <h1>Do you need motivation?</h1>
-        <button id="motivationYesBtn">Yes</button>
+        <h1>Do you want motivation?</h1>
+        <button id="showMotivationBtn">Show Me Motivation</button>
     </div>
 
-    <!-- Second Page -->
+    <!-- Video Page -->
     <div id="page2" class="page hidden">
-        <h1>Generate Motivation</h1>
-        <button id="generateMotivationBtn">Generate Video</button>
-    </div>
-
-    <!-- Third Page (Unchanged) -->
-    <div id="page3" class="page hidden">
-        <div id="videoSticker" class="hidden">
+        <div id="videoSticker">
             <!-- Video will appear here -->
         </div>
     </div>
 
     <script>
-        // Custom cursor
-        const cursor = document.querySelector('.cursor');
-        const cursorDot = document.querySelector('.cursor-dot');
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX - 10 + 'px';
-            cursor.style.top = e.clientY - 10 + 'px';
-            cursorDot.style.left = e.clientX - 2 + 'px';
-            cursorDot.style.top = e.clientY - 2 + 'px';
-        });
-
-        // Particle effect on mouse move
-        document.addEventListener('mousemove', createParticle);
-
-        function createParticle(e) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = e.clientX + 'px';
-            particle.style.top = e.clientY + 'px';
-            particle.style.width = '10px';
-            particle.style.height = '10px';
-            document.body.appendChild(particle);
-
-            setTimeout(() => {
-                particle.remove();
-            }, 1000);
-        }
-
-        // Floating emojis
-        const emojis = ['🚀', '⭐', '💪', '🔥', '✨', '💫'];
-        
-        function createFloatingEmoji() {
-            const emoji = document.createElement('div');
-            emoji.className = 'floating-emoji';
-            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-            emoji.style.left = Math.random() * window.innerWidth + 'px';
-            emoji.style.top = Math.random() * window.innerHeight + 'px';
-            document.body.appendChild(emoji);
-
-            setTimeout(() => {
-                emoji.remove();
-            }, 3000);
-        }
-
-        setInterval(createFloatingEmoji, 500);
-
-        // Existing functionality
         const videoLinks = [
             'https://drive.google.com/file/d/1mD4ESHmyyQxutIxo0aHWkQpcnOhyW6H3/preview',
             'https://drive.google.com/file/d/1k7r7l5kbcQkVstyFR92gkKQq3aZZQw1P/preview',
             'https://drive.google.com/file/d/1kjhWFVC5cw67SCKb_KywXJW-gQDK9cn0/preview',
-            'https://drive.google.com/file/d/1mfplZidADV5GWt5-M0xFq4rpsfBT6r5d/preview',
-            'https://drive.google.com/file/d/1m7AtIcH924KwQvMCJ_qDyFr7W16YIoT2/preview',
-            'https://drive.google.com/file/d/1mI9nIZOd1XZQBjkVLJ9xY73-d2cMyoyI/preview',
             'https://drive.google.com/file/d/1lpSSmtt1utwwz_4yoFj4FYss-x5z5Oz8/preview',
             'https://drive.google.com/file/d/1m4dTQ4VSrLFmpj3GvfrIdh1GMMxlw0aE/preview',
             'https://drive.google.com/file/d/1lnRWrSsnpdqwHV-wHHfYjJ2oXJUQS1R1/preview'
@@ -243,30 +126,12 @@
 
         const page1 = document.getElementById('page1');
         const page2 = document.getElementById('page2');
-        const page3 = document.getElementById('page3');
-        const motivationYesBtn = document.getElementById('motivationYesBtn');
-        const generateMotivationBtn = document.getElementById('generateMotivationBtn');
+        const showMotivationBtn = document.getElementById('showMotivationBtn');
         const videoSticker = document.getElementById('videoSticker');
 
-        let buttonClickable = false;
-        motivationYesBtn.classList.add('moving');
-
-        setTimeout(() => {
-            buttonClickable = true;
-            motivationYesBtn.classList.remove('moving');
-            motivationYesBtn.innerText = "Now you can click me!";
-        }, 10000);
-
-        motivationYesBtn.addEventListener('click', () => {
-            if (buttonClickable) {
-                page1.classList.add('hidden');
-                page2.classList.remove('hidden');
-            }
-        });
-
-        generateMotivationBtn.addEventListener('click', () => {
-            page2.classList.add('hidden');
-            page3.classList.remove('hidden');
+        showMotivationBtn.addEventListener('click', () => {
+            page1.classList.add('hidden');
+            page2.classList.remove('hidden');
             showRandomVideo();
         });
 
@@ -283,26 +148,12 @@
                 videoSticker.innerHTML = '';
                 videoSticker.appendChild(iframe);
 
-                const x = Math.floor(Math.random() * (window.innerWidth - 300));
-                const y = Math.floor(Math.random() * (window.innerHeight - 200));
-                videoSticker.style.left = `${x}px`;
-                videoSticker.style.top = `${y}px`;
-
-                videoSticker.classList.remove('hidden');
+                // Redirect after 30 seconds (assuming video duration)
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 30000); // Adjust time based on video duration
             }
         }
-
-
-        // Button hover effect
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-            button.addEventListener('mouseover', () => {
-                cursor.style.transform = 'scale(2)';
-            });
-            button.addEventListener('mouseout', () => {
-                cursor.style.transform = 'scale(1)';
-            });
-        });
     </script>
 </body>
 </html>
